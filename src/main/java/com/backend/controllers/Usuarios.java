@@ -20,7 +20,7 @@ public class Usuarios {
     }
 
     @RequestMapping(value = "/nuevoUsuario", method = RequestMethod.POST)
-    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "POST")
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     public Usuario nuevoUsuario(@RequestBody Usuario usuario){
         return userService.saveUser(usuario);
     }
@@ -31,6 +31,7 @@ public class Usuarios {
     }
 
     @RequestMapping( value = "/eliminarUsuario/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     public void eliminar( @PathVariable Long id ){
         userService.eliminarUsuario(id);
     }
