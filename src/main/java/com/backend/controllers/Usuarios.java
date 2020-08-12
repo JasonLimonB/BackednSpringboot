@@ -26,6 +26,7 @@ public class Usuarios {
     }
 
     @RequestMapping( value = "/usuarios/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
     public Optional<Usuario> buscarPorId(@PathVariable Long id){
         return userService.buscarUsuario(id);
     }
