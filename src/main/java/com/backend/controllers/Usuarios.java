@@ -20,6 +20,7 @@ public class Usuarios {
     }
 
     @RequestMapping(value = "/nuevoUsuario", method = RequestMethod.POST)
+    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "POST")
     public Usuario nuevoUsuario(@RequestBody Usuario usuario){
         return userService.saveUser(usuario);
     }
